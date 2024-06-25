@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download My Site</title>
+</head>
+<body>
+  <div style="text-align: center; margin-top: 100px;">
+    <h1>By Yours Truly, 'icodecpp'</h1>
+    <button onclick="downloadPage()">Endings (cpp core) ***not finished***</button>
+  </div>
+
+  <script>
+    function downloadPage() {
+      // Create a Blob containing the content of this page
+      const html = document.documentElement.outerHTML;
+      const blob = new Blob([html], { type: 'text/html' });
+
+      // Create a link element
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+
+      // Set the filename to download
+      link.download = '"C:\Users\soopa\OneDrive\Desktop\cpp-endings.exe"';
+
+      // Append the link to the body and click it
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
