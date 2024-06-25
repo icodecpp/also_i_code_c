@@ -8,26 +8,25 @@
 <body>
   <div style="text-align: center; margin-top: 100px;">
     <h1>By Yours Truly, 'icodecpp'</h1>
-    <button onclick="downloadPage()">Endings (cpp core) ***not finished***</button>
+    <button onclick="downloadPage()">Download Endings (cpp core) ***not finished***</button>
   </div>
 
   <script>
     function downloadPage() {
-      // Create a Blob containing the content of this page
-      const html = document.documentElement.outerHTML;
-      const blob = new Blob([html], { type: 'text/html' });
-
+      // Set the URL of the file to download
+      const fileUrl = 'https://github.com/yourusername/yourrepository/releases/download/v1.0.0/endings.exe';
+      
       // Create a link element
       const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-
-      // Set the filename to download
-      link.download = '"C:\Users\olive_4fhfxuf\OneDrive\Desktop\endings.exe"';
-
+      link.href = fileUrl;
+      
+      // Set the filename to download (optional, can be different from the actual URL)
+      link.download = 'endings.exe';
+      
       // Append the link to the body and click it
       document.body.appendChild(link);
       link.click();
-
+      
       // Clean up
       document.body.removeChild(link);
     }
